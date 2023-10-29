@@ -1,7 +1,27 @@
 
-# output "vpc-id" {
-#   value = aws_vpc.terraform-vpc-ExpcitPxy.id
-# }
+output "appZone-vpc-id" {
+  value = aws_vpc.terraform-vpc-appZone.id
+}
+
+output "secZone-vpc-id" {
+  value = aws_vpc.terraform-vpc-securityZone.id
+}
+
+output "lattice_server_dns" {
+    value = aws_vpclattice_service.latticePOC_service_appVpc.dns_entry[0].domain_name
+}
+
+output "AWS_Nginx_secZone_Public_IP" {
+  value = aws_instance.secZone_nginx_instance.public_ip
+}
+
+output "AWS_Nginx_appZone_Public_IP" {
+  value = aws_instance.appZone_nginx_instance.public_ip
+}
+
+output "secZone_nginx-lb_DNS_Name" {
+  value = aws_lb.secZone-nginx-lb.dns_name
+}
 
 # output "vpc-public-a" {
 #   value = aws_subnet.public-a.cidr_block
@@ -46,13 +66,6 @@
 
 # output "restrictedSrcAddress" {
 #   value = var.restrictedSrcAddress
-# }
-
-# output "nlb_DNS_Name" {
-#   value = aws_lb.autoscalelb.dns_name
-# }
-# output "AWS_Nginx_Server_Public_IP" {
-#   value = aws_instance.server_instance.public_ip
 # }
 
 # output "Locust_Master_Server_Public_IP" {

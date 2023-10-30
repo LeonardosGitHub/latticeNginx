@@ -126,3 +126,14 @@ variable "resourceOwner" {
   default     = "leonardo.simon@f5.com"
   description = "This is a tag used for object creation. Example is last name."
 }
+
+variable "nginxRepoCrt" {
+  type        = string
+  description = "Provide as variable when applying terraform"
+  sensitive   = true
+}
+variable "nginxRepoKey" {
+  type        = string
+  description = "Provide as variable when applying terraform"
+  sensitive   = true
+}

@@ -15,6 +15,10 @@ output "AWS_Nginx_secZone_Public_IP" {
   value = aws_instance.secZone_nginx_instance.public_ip
 }
 
+output "AWS_Nginx_plus_secZone_Public_IP" {
+  value = aws_instance.secZone-nginx-plus_instance.public_ip
+}
+
 output "AWS_Nginx_appZone_Public_IP" {
   value = aws_instance.appZone_nginx_instance.public_ip
 }

@@ -22,7 +22,7 @@ resource "aws_lb_target_group" "secZone-nginx-tg" {
 
 resource "aws_lb_target_group_attachment" "secZone-tg-attach" {
   target_group_arn = aws_lb_target_group.secZone-nginx-tg.arn
-  target_id        = aws_instance.secZone_nginx_instance.id
+  target_id        = aws_instance.secZone-nginx-plus_instance.id
   port             = 80
 }
 
@@ -55,3 +55,6 @@ resource "aws_lb" "secZone-nginx-lb" {
   }
 }
 
+data "aws_ec2_managed_prefix_list" "regionlatticeprefixlist" {
+  name = "com.amazonaws.${var.aws_region}.vpc-lattice"
+}

@@ -11,9 +11,9 @@ output "lattice_server_dns" {
     value = aws_vpclattice_service.latticePOC_service_appVpc.dns_entry[0].domain_name
 }
 
-output "AWS_Nginx_secZone_Public_IP" {
-  value = aws_instance.secZone_nginx_instance.public_ip
-}
+# output "AWS_Nginx_secZone_Public_IP" {
+#   value = aws_instance.secZone_nginx_instance.public_ip
+# }
 
 output "AWS_Nginx_plus_secZone_Public_IP" {
   value = aws_instance.secZone-nginx-plus_instance.public_ip
@@ -26,6 +26,10 @@ output "AWS_Nginx_appZone_Public_IP" {
 output "secZone_nginx-lb_DNS_Name" {
   value = aws_lb.secZone-nginx-lb.dns_name
 }
+
+# output "LatticePrefix-list" {
+#   value = data.aws_ec2_managed_prefix_list.regionlatticeprefixlist
+# }
 
 # output "vpc-public-a" {
 #   value = aws_subnet.public-a.cidr_block

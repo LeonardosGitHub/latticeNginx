@@ -16,7 +16,7 @@ resource "aws_security_group" "appZone-nginx-sg" {
     from_port        = 80
     to_port          = 80
     protocol         = "tcp"
-    prefix_list_ids  = ["pl-0a29265a06ed0e2f4"]
+    prefix_list_ids  = [data.aws_ec2_managed_prefix_list.regionlatticeprefixlist.id]
   }
 
   ingress {

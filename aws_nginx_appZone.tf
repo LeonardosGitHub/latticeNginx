@@ -56,6 +56,13 @@ resource "aws_security_group" "appZone-nginx-sg" {
   }
 }
 
+locals {
+  appZone_nginx_onboard = templatefile("${path.module}/files/nginx_init_server.tmpl", {
+    aws_region        = var.aws_region
+  }
+  )
+}
+
 resource "aws_instance" "appZone_nginx_instance" {
   ami           = var.web_server_ami[var.aws_region]
   instance_type = "m5.24xlarge"
@@ -68,6 +75,6 @@ resource "aws_instance" "appZone_nginx_instance" {
       Name  = "${var.projectPrefix}-appZone-nginx-${random_id.buildSuffix.hex}"
       Owner: var.resourceOwner
   }
-  user_data              = "${file("files/nginx_init_server.sh")}"
+  user_data                   = base64encode(local.appZone_nginx_onboard)
 
 }

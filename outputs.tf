@@ -1,3 +1,6 @@
+output "A-aws-Region" {
+  value = var.aws_region
+}
 
 output "appZone-vpc-id" {
   value = aws_vpc.terraform-vpc-appZone.id

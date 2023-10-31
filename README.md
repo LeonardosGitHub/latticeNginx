@@ -7,5 +7,5 @@ The 4 sensitive variables will have to be pulled from secrets or defined locally
 - var.nginxRepoKey - this is provided by F5/Nginx when you subscribe to Nginx Plus
 
 
-Here's an example to apply via terraform:
+Here's an example to apply via terraform using locally defined variables:
 - terraform apply -var "ssh_key=$ssh_key" -var 'f5_password=$f5_password' -var "nginxRepoCrt=$nginxRepoCrt" -var "nginxRepoKey=$nginxRepoKey"

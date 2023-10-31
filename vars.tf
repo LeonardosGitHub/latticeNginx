@@ -6,9 +6,10 @@ variable "web_server_ami" {
     #"us-east-1"      = "ami-a4c7edb2"
     #"ap-southeast-1" = "ami-77af2014"
     #"us-east-2"      = "ami-0ccabb5f82d4c9af5"  #Amazon Linux 2023 AMI
-    "us-west-1"      = "ami-0f8e81a3da6e2510a"
+    #"us-west-1"      = "ami-0f8e81a3da6e2510a"
     "us-east-2"      = "ami-024e6efaf93d85776"
     "us-west-2"      = "ami-03f65b8614a860c29"
+    "ca-central-1"   = "ami-0ea18256de20ecdfc"
   }
 }
 

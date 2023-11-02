@@ -19,7 +19,7 @@ This builds:
     - targetting Security Zone Ubuntu/Nginx instance
 
 
-The 4 sensitive variables will have to be pulled from secrets or defined locally.
+The 3 sensitive variables will have to be pulled from secrets or defined locally.
 - var.ssh_key - uploads public key to be used for the EC2 instances
 - var.nginxRepoCrt - this is provided by F5/Nginx when you subscribe to Nginx Plus
 - var.nginxRepoKey - this is provided by F5/Nginx when you subscribe to Nginx Plus

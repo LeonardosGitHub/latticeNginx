@@ -62,11 +62,11 @@ variable "f5_username" {
   description = "User name for the BIG-IP (Note: currenlty not used. Defaults to 'admin' based on AMI"
   default     = "admin"
 }
-variable "f5_password" {
-  type        = string
-  sensitive   = true
-  description = "BIG-IP Password"
-}
+# variable "f5_password" {
+#   type        = string
+#   sensitive   = true
+#   description = "BIG-IP Password"
+# }
 variable "ssh_key" {
   type        = string
   description = "public key used for authentication in ssh-rsa format"
